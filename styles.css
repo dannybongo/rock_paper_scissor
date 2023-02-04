@@ -1,0 +1,47 @@
+/*--------------------------------------------- GLOBAL STYLES --------------------------------------------- */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: monospace, sans-serif;
+  color: black;
+
+  /* outline: auto;
+  outline-color: red; */
+}
+
+h1 {
+  text-align: center;
+  margin: 10px;
+}
+
+.player-options-container {
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.player-options {
+  font-size: 50px;
+  margin: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.player-options:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.player-options:active {
+  background-color: red;
+}
+
+.game {
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
