@@ -6,8 +6,8 @@
   font-family: monospace, sans-serif;
   color: black;
 
-  /* outline: auto;
-  outline-color: red; */
+  outline: auto;
+  outline-color: red;
 }
 
 h1 {
@@ -40,8 +40,16 @@ h1 {
 
 .game {
   background-color: green;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
+}
+
+  /* .score-board{
+background-color: ; */
+}
+.scores {
+  margin-left: 100px;
 }
