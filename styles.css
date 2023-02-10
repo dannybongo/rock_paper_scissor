@@ -5,41 +5,25 @@
   box-sizing: border-box;
   font-family: monospace, sans-serif;
   color: black;
+  background-color: ghostwhite;
 
+  /* outline: auto;
+  outline-color: red; */
+}
+
+/*--------------------------------------------- MAIN/BODY STYLES--------------------------------------------- */
+
+.main {
   outline: auto;
-  outline-color: red;
+  outline-color: black;
+  margin: auto;
+  width: 50%;
+  margin-top: 20px;
 }
 
-h1 {
-  text-align: center;
-  margin: 10px;
-}
+/*--------------------------------------------- TOP LEVEL CONTAINER STYLES--------------------------------------------- */
 
-.player-options-container {
-  background-color: aqua;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-
-.player-options {
-  font-size: 50px;
-  margin: 20px;
-  transition: all 0.2s ease-in-out;
-}
-
-.player-options:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-.player-options:active {
-  background-color: red;
-}
-
-.game {
-  background-color: green;
+.container {
   height: 100px;
   display: flex;
   justify-content: center;
@@ -47,9 +31,68 @@ h1 {
   gap: 50px;
 }
 
-  /* .score-board{
-background-color: ; */
+/*--------------------------------------------- HEADER/TITLE STYLES--------------------------------------------- */
+
+.header {
+  flex-direction: column;
+  gap: 0px;
 }
-.scores {
-  margin-left: 100px;
+
+h1 {
+  text-align: center;
+  margin: 10px;
+}
+
+.optionsText {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/*--------------------------------------------- PLAYER OPTIONS STYLES--------------------------------------------- */
+
+.optionsSubContainer {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.option {
+  font-size: 50px;
+  margin: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.option:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.option:active {
+  background-color: red;
+}
+
+/*--------------------------------------------- PLAYER & COMPUTER CHOSEN OPTIONS - STYLES--------------------------------------------- */
+
+.choices {
+  height: 150px;
+}
+
+.choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#playerChoiceH2 {
+  font-size: 50px;
+  margin: 20px;
+}
+
+#computerChoiceH2 {
+  font-size: 50px;
+  margin: 20px;
 }

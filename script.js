@@ -1,71 +1,73 @@
 
-const scoreComputer = document.getElementsByClassName("computer-score")
-const scorePlayer = document.getElementsByClassName("player-score")
-const playerChoiceDisplay = document.getElementById("player-choice-h2")
-const computerChoiceDisplay = document.getElementById("computer-choice-h2")
-let playerSelection
+//Assign our HTML elements variables, so we can interact with them.
+const computerScoreDisplay = document.getElementById("computerScoreNumber")
+const playerScoreDisplay = document.getElementById("playerScoreNumber")
+const computerChoiceDisplay = document.getElementById("computerChoiceH2")
+const playerChoiceDisplay = document.getElementById("playerChoiceH2")
+const roundDisplay = document.getElementById("round")
+const winnerDisplay = document.getElementById("winner")
+const possibleChoices = document.querySelectorAll("button");
 
-// game();
 
-//Stores all possible buttons values in a list
-let possibleChoices = document.querySelectorAll("button");
+let playerScore = 0
+let computerScore = 0
+let round = 0
+let winner = "x"
 
-//For each possible choice in our list of possible choices, add an event listener. When clicked, function (e) will run, assigning the data behind our button to our variable  named playerSelection
+playerScoreDisplay.innerHTML = playerScore
+computerScoreDisplay.innerHTML = computerScore
+roundDisplay.innerHTML = round
+
+//For each possible player choice in our list of possible player choices, add an event listener. When clicked, function (e) will run, 
+//assigning the data behind our button to our variable named playerSelection.We then display this to browser as a visual.
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener("click", (e) => {
     playerSelection = e.target.innerHTML
     playerChoiceDisplay.innerHTML = playerSelection
     playRound();
 }))
 
+//randomly selecting a choice for the computer
 function computerChoice(){
     let options = ["✊", "📰", "✂️"]
     let option = options[Math.floor(Math.random() * options.length)];
-
-    // if (option = "R"){
-    //     option = "✊"
-    // } else if (option = "P"){
-    //     options ="📰"
-    // } else {
-    //     options="✂️"
-    // }
-
     computerChoiceDisplay.innerHTML = option
     return option;
 }
 
 
-//compare user input and computer's choice
+//compare user input and computer choice
 function playRound(){
 
     let computerSelection = computerChoice();
 
-    console.log("Player has selected " + playerSelection)
-    console.log("Computer has selected " + computerSelection)
+    if (playerSelection === computerSelection){
+        winner = "Draw"
+        round++
+        winnerDisplay.innerHTML = winner
+        roundDisplay.innerHTML = round
 
-    if (playerSelection === computerSelection) {
-        console.log("Draw!");
-
-    } else if (playerSelection === "R" && computerSelection === "S" || 
-        playerSelection === "P" && computerSelection === "R" || 
-        playerSelection === "S" && computerSelection === "P") {
+    } else if (playerSelection === "✊" && computerSelection === "✂️" || 
+        playerSelection === "📰" && computerSelection === "✊" || 
+        playerSelection === "✂️" && computerSelection === "📰") {
         console.log("Player wins");
+        winner = "Player"
+        playerScore++
+        round++
+        playerScoreDisplay.innerHTML = playerScore
+        winnerDisplay.innerHTML = winner
+        roundDisplay.innerHTML = round
 
     } else {
         console.log("Computer Wins");
+        winner = "Computer"
+        computerScore++
+        round++
+        computerScoreDisplay.innerHTML = computerScore
+        winnerDisplay.innerHTML = winner
+        roundDisplay.innerHTML = round
     }
-
-    // console.log("Scores: Player-" + scorePlayer + " Computer-" + scoreComputer)
 }
-     
 
-
-
-
-function game(){
-    for (let i = 0; i < 5; i++){
-        playRound()}
-        
-}
 
 
 // General comments 

@@ -8,37 +8,39 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Rock, Paper, Scissors</h1>
-    <div class="main-container">
-      <div class="player-options-container">
-        <div class="player-options-subcontainer">
-          <button class="player-options">✊</button>
-        </div>
-        <div class="player-options-subcontainer">
-          <button class="player-options">📰</button>
-        </div>
-        <div class="player-options-subcontainer">
-          <button class="player-options">✂️</button>
+    <div class="main">
+      <div class="header container">
+        <h1>Rock, Paper, Scissors</h1>
+        <h2 class="optionsText">Player, select an option:</h2>
+      </div>
+      <div class="options container">
+        <div class="optionsSubContainer">
+          <button class="option">✊</button>
+          <button class="option">📰</button>
+          <button class="option">✂️</button>
         </div>
       </div>
-      <div class="game">
-        <div class="player-choice">
+      <div class="choices container">
+        <div class="choice">
           <h2>Player Choice</h2>
-          <h2 id="player-choice-h2"></h2>
+          <h2 id="playerChoiceH2">?</h2>
         </div>
-        <div class="computer-choice">
+        <div class="choice">
           <h2>Computer Choice</h2>
-          <h2 id="computer-choice-h2"></h2>
+          <h2 id="computerChoiceH2">?</h2>
         </div>
       </div>
-      <div class="score-board">
-        <div class="scores">
-          <h2 class="player-score">Player Score:</h2>
-          <h2 class="computer-score">Computer Score:</h2>
-        </div>
-        <div class="round">
-          <h2>round:xx</h2>
-        </div>
+      <div class="winner container">
+        <h2>...and the winner is: <span id="winner"></span></h2>
+      </div>
+      <div class="scores container">
+        <h2 class="playerScore">
+          Player Score:<span id="playerScoreNumber"></span>
+        </h2>
+        <h2 class="computerScore">
+          Computer Score:<span id="computerScoreNumber"></span>
+        </h2>
+        <h2>Round:<span id="round">0</span></h2>
       </div>
     </div>
     <script src="script.js"></script>
